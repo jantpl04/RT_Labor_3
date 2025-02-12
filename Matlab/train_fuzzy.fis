@@ -1,0 +1,51 @@
+[System]
+Name='train_fuzzy'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=12
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='deltaX'
+Range=[-400 4010]
+NumMFs=4
+MF1='negative':'trimf',[-400 -200 0]
+MF2='zero':'trimf',[-200 0 200]
+MF3='medium':'trimf',[0 200 735]
+MF4='big':'trapmf',[200 735 3940 4010]
+
+[Input2]
+Name='v'
+Range=[-20 20]
+NumMFs=3
+MF1='negative':'trimf',[-15 -10 0]
+MF2='zero':'trimf',[-10 0 10]
+MF3='positive':'trimf',[0 10 15]
+
+[Output1]
+Name='F'
+Range=[-4500 4500]
+NumMFs=3
+MF1='negative':'trimf',[-4500 -2250 0]
+MF2='zero':'trimf',[-2250 0 2250]
+MF3='positive':'trimf',[0 2250 4500]
+
+[Rules]
+1 1, 2 (1) : 1
+1 2, 1 (1) : 1
+1 3, 1 (1) : 1
+2 1, 3 (1) : 1
+2 2, 2 (1) : 1
+2 3, 1 (1) : 1
+3 1, 3 (1) : 1
+3 2, 2 (1) : 1
+3 3, 1 (1) : 1
+4 1, 3 (1) : 1
+4 2, 3 (1) : 1
+4 3, 2 (1) : 1
