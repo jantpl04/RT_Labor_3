@@ -1,186 +1,127 @@
-\chapter{Theorie}
+\chapter{Tasks}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Charakteristische Gleichung des Standardregelkreises}
+\section{Train Subsystem}
 
-
-Die Übertragungsfunktion des geschlossenen Regelkreises lautet:
-
-\begin{equation*}
-	Y(z) = \frac{D(z)\cdot H_0G(z)}{1+K\cdot D(z)\cdot H_0G(z)}
-\end{equation*}
-
-Bei der charakteristischen Gleichung werden nur die Polstellen betrachtet, sie lautet also: 
-
-\begin{equation*}
-	1+K\cdot D(z)\cdot H_0G(z) = 0
-\end{equation*}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Vorgehen beim WOK - Verfahren}
-
-Das Wurzelortskurvenverfahren ist eine Methode zur Analyse, wie sich die Pole eines geschlossenen Regelkreises ändern, wenn der Verstärkungsfaktor K variiert. Das Verfahren läuft wie folgt ab:
-
-\begin{enumerate}
-	\item Bestimmen der offenen Übertragungsfunktion $H_0G(z)$
-	\item Aufstellen der charakteristischen Gleichung
-	\item Identifizieren der Pole und Nullstellen der offenen Übertragungsfunktion
-	\item Zeichnen der Wurzelortskurve, beginnend bei den Polen für K=0 und endend an den Nullstellen für K→$\infty$
-	\item Überprüfung der Stabilität durch Beobachtung der Lage der Pole innerhalb/außerhalb des Einheitskreises
-\end{enumerate}
-\newpage
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Polstellen bei K = 0}
-
-Für K = 0 erhält man:
-\begin{equation*}
-	1+0\cdot D(z)\cdot H_0G(z) = 0
-\end{equation*}
-
-Somit liegen die Polstellen des geschlossenen Regelkreises mit den Polstellen des offenen Regelkreises überein.
-
-\section{Polstellen für K→ $\infty$}
-
-Für K→$\infty$ dominiert der Term $K\cdot H_0G(z)$ der charakteristischen Gleichung: 
-\begin{equation*}
-	1+K\cdot D(z)\cdot H_0G(z) = 0 \Longrightarrow K\cdot H_0G(z) = -1
-\end{equation*}
-
-Für sehr große Werte von K nähert sich die Gleichung asymptotisch den Nullstellen von $H_0G(z)$, da der Ausdruck nur dann erfüllt ist, wenn $H_0G(z)$ selbst gegen $-\frac{1}{K}$ konvergiert, was wiederum Nullstellenbedingung entspricht.
-
-Die Wurzelortskurven enden also bei K→$\infty$ an den Nullstellen von $H_0G(z)$.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Aufgaben}
-
-\section*{A 3.1}
-Das MATLAB Übertragungssystem mit der gegebenen Streckenübertragungsfunktion kann wie folgt erstellt werden:
-\begin{center}
-	sys\_cont = tf(1, [0.5, 1.5 , 1]);
-\end{center}
-
-\section*{A 3.2}
-Ein digitales Übertragungssystem kann direkt eingegeben werden, indem man bei der tf()-Funktion noch eine Abtastzeit mit angibt: 
-\begin{center}
-	h0g = tf([0.1548, 0.0939], [1, -0.9744, 0.2231], T);
-\end{center}
-
-\section*{A 3.3}
-
-Um die kontinuierliche Übertragungsfunktion $G_S(s)$ per Hand in die z-Übertragungsfunktion zu transformieren wird der Laplace-Operator s durch eine diskrete Näherung wie beispielsweise beim Euler-Vorwärts- Euler-Rückwärts- oder Tustin-Verfahren ersetzt. Anschließend wird das Ergebnis so weit umgeformt, dass man einen Bruch aus zwei rationalen Funktionen erhält.
-
-\newpage
-
-\section*{A 3.4}
-
-Der Matlab Befehl für diese Transformation lautet wie folgt:
-\begin{center}
-	sys\_disc = c2d(sys\_cont, T, 'zoh');
-\end{center}
-
-Man erhält damit die gleiche Übertragungsfunktion wie angegeben.
-
-
-\section*{A 3.5}
-Folgende Verfahren können mit der c2d Funktion zur Transformation genutzt werden:
-
-\begin{enumerate}
-	\item \textbf{'zoh':} Zero-order Hold
-	\item \textbf{'foh':} Triangle approximation
-	\item \textbf{'impulse':} Impulse invariant discretization
-	\item \textbf{'tustin':} Bilinear method
-	\item \textbf{'matched':} Zero-pole matching method
-	\item \textbf{'least-squares':} Least-squares method
-	\item \textbf{'damped':} Damped Tustin approximation
-\end{enumerate}
-
-\section*{A 3.6}
-Folgende Befehle führen die bilineare Transformation durch:
-\begin{center}
-	PI\_cont = tf([K, K], [1, 0]);\\
-	PI\_disc = c2d(PI\_cont, T, 'tustin');
-\end{center}
-
-\newpage
-
-\section*{A 3.7}
-
-Die charakteristische Gleichung für den digitalen Regelkreis mit PI-Regler lautet:
-
-\begin{equation*}
-	1 + K\cdot \frac{1,25z - 0,75}{z - 1}\cdot \frac{0,1548z + 0,0939}{z^2 - 0,9744z + 0,2231}
-\end{equation*}
-
-
-\section*{A 3.8}
-
-Nullstellen:
-\begin{itemize}
-	\item $x_1 = -0,6065$
-	\item $x_2 = 0,6$
-\end{itemize}
-Polstellen:
-\begin{itemize}
-	\item $p_1 = 1$
-	\item $p_2 = 0,6065$
-	\item $p_3 = 0,3679$
-\end{itemize}
-\newpage
-
-
-\section*{A 3.9}
-
-Abbildung \ref{wok} zeigt die Wurzelortskurve des Systems. Sie beginnt in den Polstellen des offenen Regelkreises und endet in den Nullstellen des offenen
-Regelkreises.
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1\linewidth]{images/wok.png}
-	\caption{Wurzelortskurve}
-	\label{wok}
+	\includegraphics[width=0.8\linewidth]{images/train_subsystem.png}
+	\caption{Train Subsystem}
+	\label{tss}
+\end{figure}
+
+Figure \ref{tss} shows a simulink subsystem that models a train with one input, the accelerating force and two outputs, one being the distance traveled and the other the current speed.
+The incoming force is converted into the acceleration according to the equation $F = m\cdot a$ by dividing by the mass, which is then turned into the velocity and distance by using two integrating blocks.
+
+\section{Simulink Model}
+
+
+The whole Simulink Model with the control loop can be seen in Figure \ref{sm}. It contains the standard control loop with a fuzzy controller and the train model mentioned above. The fuzzy controller has both the control deviation of the distance and the current speed as input signals. With the step function as target value, a distance to be traveled is specified.
+
+
+
+\newpage
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\linewidth]{images/simulink_model.png}
+	\caption{Simulink Model}
+	\label{sm}
 \end{figure}
 
 
-\section*{A 3.10}
+\section{Fuzzy Inference System}
 
-Da der Punkt auf der WOK für K=4 wesentlich näher am Einheitskreis liegt, als der Punkt für K = 0.9, ist zu erwarten, dass das System mit geringerer Verstärkung eine deutlich kleinere Überschwingweite und Ausregelzeit als das System mit der höheren Verstärkung hat. Abbildung \ref{sa} bestätigt diese Vermutung.
-\newpage
-
-\section*{A 3.11}
+The Fuzzy Inference System matrix of the Fuzzy controller can be easily edited using the Matlab Fuzzy Logic Designer. The inputs \glqq deltaX\grqq{} and \glqq v\grqq{} as well as the output \glqq F\grqq{} are implemented according to the following Membership function plots:
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1\linewidth]{images/sprungantworten.png}
-	\caption{Sprungantworten bei verschiedenen Reglerverstärkungen}
-	\label{sa}
+	\includegraphics[scale=0.35]{images/mfp_deltax.png}
+	\caption{Membership Function Plots of \glqq deltaX\grqq{}}
+	\label{lolo}
+\end{figure}
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.35]{images/mfp_v.png}
+	\caption{Membership Function Plots of \glqq v\grqq{}}
+	\label{lele}
+\end{figure}
+
+
+\newpage
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.35]{images/mfp_F.png}
+	\caption{Membership Function Plots of \glqq F\grqq{}}
+	\label{}
 \end{figure}
 
 
 
+The Output F is calculated according to the Fuzzy rule table in Figure \ref{rules}
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.9\linewidth]{images/rule_table.png}
+	\caption{Fuzzy Rule Table}
+	\label{rules}
+\end{figure}
+
+
+\section{Possible Membership Function Shapes}
+
+The following shapes of Membership Functions are possible in the Matlab Membership Function Editor:
+
+\begin{itemize}
+	\item \texttt{trimf}: Triangular
+	\item \texttt{trapmf}: Trapezoidal
+	\item \texttt{gbellmf}: Generalized Bell
+	\item \texttt{gaussmf}: Gaussian
+	\item \texttt{gauss2mf}: Generalized Gaussian
+	\item \texttt{sigmf}: Sigmoidal
+	\item \texttt{dsigmf}: Difference of Sigmoids
+	\item \texttt{psigmf}: Product of Sigmoids
+	\item \texttt{pimf}: Pi-Shaped
+	\item \texttt{smf}: S-Shaped
+	\item \texttt{zmf}: Z-Shaped
+	\item \texttt{linsmf}: Linear S-Shaped
+	\item \texttt{linzmf}: Linear Z-Shaped
+\end{itemize}
 
 
 
+\section{Simulation}
+
+The simulation results for a simulation time of 500 s and a distance of 2 km can be seen in figure \ref{x} for the position of the train and in figure \ref{v} for the velocity of the train. The train reaches the second station after approximately 350 seconds.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.9\linewidth]{images/position.png}
+	\caption{Position Plot after Simulation}
+	\label{x}
+\end{figure}
+\newpage
 
 
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.9\linewidth]{images/velocity.png}
+	\caption{Velocity Plot after Simulation}
+	\label{v}
+\end{figure}
 
 
+\section{Rule Viewer}
 
-
-
-
-
-
-
-
-
-
-
-
-
+The reason for a maximum speed of 10 $\frac{m}{s}$ or 36 $\frac{km}{h}$ is apparent from Figures \ref{lele} and \ref{rules}. From a speed of 10 $\frac{m}{s}$, $\mu_{zero} = 0$ and $\mu_{positive} = 1$, which in turn means that only the last line of the rule table is relevant, where only \glqq zero\grqq{} or \glqq negative\grqq{} are possible as output values for the force, meaning the velocity cannot rise any further.
+\\
+\\
+The train is able to handle distances between the two stations as long as these values are defined in the membership functions for deltaX. If the distance is no longer less than 4010 m (maximum value to be defined in figure \ref{lolo}), then no membership function of deltaX is $\neq 0$, none of the rules are fulfilled and no output value can be calculated for the accelerating force.
 
 
 
