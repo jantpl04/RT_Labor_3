@@ -1,0 +1,5 @@
+# Ignoriere spezifische Dateien
+dokumentation-blx.bib
+dokumentation.bbl
+dokumentation.pdf
+dokumentation.synctex.gz

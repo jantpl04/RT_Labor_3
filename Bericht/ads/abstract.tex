@@ -1,0 +1,56 @@
+%!TEX root = ../dokumentation.tex
+
+
+\newcommand{\deAbstractContent}{
+Diese Studienarbeit befasst sich mit der Integration einer Brennstoffzelle als Reichweitenextender in das Solo Electra 720. Der Schwerpunkt des bearbeiteten Teilprojekts lag auf der Inbetriebnahme der Brennstoffzelle und der Herstellung einer funktionierenden Schnittstelle zwischen Brennstoffzelle und Software. Aufgrund fehlenden Zugangs zu Wasserstoff wurde die Brennstoffzelle leider nicht unter realen Bedingungen getestet; stattdessen wurde die Kommunikation und Steuerung über einen Laptop erfolgreich eingerichtet.
+
+Theoretische Grundlagen zu den Themen Elektromobilität, Wasserstoff als Energieträger, und die Funktion von Protonenaustauschmembran-Brennstoffzellen (PEMFC) bilden die Basis dieser Arbeit.
+
+Das praktische Ergebnis zeigt, dass die Verbindung zwischen Brennstoffzelle und Software zuverlässig umgesetzt werden konnte. Dies legt eine Grundlage für künftige Projekte, die auf den Ausbau und Testbetrieb eines wasserstoffbetriebenen Systems abzielen.
+}
+
+\newcommand{\enAbstractContent}{
+This study focuses on integrating a fuel cell as a range extender into the Solo Electra 720. The primary goal of the project was to commission the fuel cell and establish a functioning interface between the fuel cell and software. Due to the lack of access to hydrogen, the fuel cell was not tested under real operating conditions; instead, successful communication and control were established via a laptop.
+
+Theoretical foundations on topics such as electromobility, hydrogen as an energy carrier, and the basics of proton exchange membrane fuel cells (PEMFC) underpin this work.
+
+The practical results demonstrate that the connection between the fuel cell and the software was successfully implemented. This serves as a foundation for future projects focused on expanding and testing hydrogen-powered systems.
+}
+
+%%%%%%%% Ab hier nicht mehr anfassen! %%%%%%%%
+
+\newcommand{\deAbstract}{%
+    \renewcommand{\abstractname}{Kurzfassung} % Text für Überschrift
+    \begin{abstract}
+        \thispagestyle{plain}
+        \deAbstractContent
+    \end{abstract}
+}
+
+\newcommand{\enAbstract}{
+    \renewcommand{\abstractname}{\langabstract} % Text für Überschrift
+    \begin{abstract}
+        \thispagestyle{plain}
+        \enAbstractContent
+    \end{abstract}
+}
+
+\iflang{de}{
+    \deAbstract
+    \ifbothabstracts
+        \clearpage
+      %  \begin{otherlanguage}{english}
+            \enAbstract
+     %   \end{otherlanguage}
+    \fi
+}
+
+\iflang{en}{
+    \enAbstract
+    \ifbothabstracts
+        \clearpage
+        \begin{otherlanguage}{ngerman}
+            \deAbstract
+        \end{otherlanguage}
+    \fi
+}

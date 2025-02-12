@@ -1,0 +1,86 @@
+\select@language {ngerman}
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {ngerman}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Abk\"urzungsverzeichnis}{VI}{chapter*.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Abbildungsverzeichnis}{VII}{chapter*.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Tabellenverzeichnis}{VIII}{chapter*.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\nonumberline Listings}{IX}{chapter*.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {1}Grundlagen der C Programmierung}{1}{chapter.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.1}Grundlegende Datentypen}{1}{section.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.1.1}Ganzzahlige Datentypen}{1}{subsection.1.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.1.2}Flie\IeC {\ss }kommazahlen}{2}{subsection.1.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.2}Variablen und Konstanten}{3}{section.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.2.1}Variablen}{3}{subsection.1.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.2.2}Konstanten}{3}{subsection.1.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.3}Formatierte Ein- und Ausgabe}{4}{section.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3.1}Die printf Funktion}{4}{subsection.1.3.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.3.2}Die scanf Funktion}{5}{subsection.1.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.4}Ausdr\IeC {\"u}cke}{6}{section.1.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.5}Verzweigungen}{7}{section.1.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.5.1}If-Else}{7}{subsection.1.5.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.5.2}Switch-Case}{8}{subsection.1.5.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.6}Schleifen}{10}{section.1.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.6.1}Die for Schleife}{10}{subsection.1.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.6.2}Die while Schleife}{11}{subsection.1.6.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {1.6.3}Die do-while Schleife}{11}{subsection.1.6.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {2}Projekt: Generatorisches Bremsen}{12}{chapter.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}Anforderungen an das Projekt}{12}{section.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.2}Technische Umsetzung}{13}{section.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.1}Hardware}{13}{subsection.2.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\nonumberline Spannungsversorgung}{13}{section*.10}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\nonumberline Ansteuerung des Motors}{14}{section*.14}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\nonumberline Verwendung der Bremsenergie}{15}{section*.16}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.2}Software}{16}{subsection.2.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\nonumberline Mikrocontroller}{16}{section*.17}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\nonumberline Programmieren auf dem Arduino}{16}{section*.18}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\nonumberline Zeitliche Steuerung des Programmablauf}{16}{section*.19}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\nonumberline Spannungsmessungen}{17}{section*.20}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\nonumberline Strommessungen}{19}{section*.22}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\nonumberline \acs {PWM}-Signal}{20}{section*.24}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\nonumberline Tastereingaben}{21}{section*.25}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\nonumberline LC-Display}{23}{section*.27}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\nonumberline LED-Anzeigen}{24}{section*.30}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.3}Platine}{25}{subsection.2.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.3}Fazit und Ausblick}{25}{section.2.3}
